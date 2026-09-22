@@ -1,0 +1,210 @@
+{
+  "a01-pick-d10": {
+    "want": "D10_생존_중도탈락",
+    "text": "D10_생존_중도탈락_2400교육 종단 · 2,400사례 · 8변수",
+    "x": 28.39,
+    "y": 41.5,
+    "w": 18.95,
+    "h": 5.53,
+    "bubble": "right",
+    "capture": {
+      "width": 1758,
+      "height": 1079
+    }
+  },
+  "a02-load": {
+    "want": "이 자료 불러오기",
+    "text": "이 자료 불러오기",
+    "x": 44.95,
+    "y": 34.46,
+    "w": 8.82,
+    "h": 4,
+    "bubble": "left",
+    "capture": {
+      "width": 1758,
+      "height": 1079
+    }
+  },
+  "a03-method": {
+    "want": "기술통계",
+    "text": "기술통계M01 · 초급 · 지금 자료의 중심과 퍼짐을 숫자로 요약하려면",
+    "x": 55.73,
+    "y": 58.4,
+    "w": 31.27,
+    "h": 6.07,
+    "bubble": "left",
+    "capture": {
+      "width": 1758,
+      "height": 1079
+    }
+  },
+  "a04-data-tab": {
+    "want": "자료",
+    "text": "자료",
+    "x": 29.17,
+    "y": 14.5,
+    "w": 2.34,
+    "h": 9.27,
+    "bubble": "bottom",
+    "capture": {
+      "width": 1758,
+      "height": 1079
+    }
+  },
+  "a05-put-var": {
+    "want": "변수 넣기",
+    "text": "변수 넣기",
+    "x": 78.28,
+    "y": 43.75,
+    "w": 5.84,
+    "h": 4,
+    "bubble": "left",
+    "capture": {
+      "width": 1758,
+      "height": 1079
+    }
+  },
+  "a06-pick-var": {
+    "want": "SES",
+    "text": "SES사회경제적 지위 — 소득·학력·직업을 묶어 재는 값연속형 (continuous) · 등간 (interval) · 결측 0%",
+    "x": 26.64,
+    "y": 73.58,
+    "w": 13.76,
+    "h": 11.94,
+    "bubble": "right",
+    "capture": {
+      "width": 1758,
+      "height": 1079
+    }
+  },
+  "a07-run": {
+    "want": "분석 실행",
+    "text": "분석 실행",
+    "x": 86.29,
+    "y": 60.28,
+    "w": 23.24,
+    "h": 4,
+    "bubble": "left",
+    "capture": {
+      "width": 1758,
+      "height": 1079
+    }
+  },
+  "a08-charts": {
+    "want": "그래프 그리기",
+    "text": "그래프 그리기",
+    "x": 8.19,
+    "y": 69.55,
+    "w": 14.4,
+    "h": 4.42,
+    "bubble": "right",
+    "capture": {
+      "width": 1758,
+      "height": 1079
+    }
+  },
+  "a09-results": {
+    "want": "통계분석결과",
+    "text": "통계분석결과",
+    "x": 8.19,
+    "y": 74.2,
+    "w": 14.4,
+    "h": 4.42,
+    "bubble": "right",
+    "capture": {
+      "width": 1758,
+      "height": 1079
+    }
+  },
+  "a10-file-open": {
+    "want": "데이터 파일 불러오기…",
+    "text": "데이터 파일 불러오기…Ctrl+O",
+    "x": 31.75,
+    "y": 8.38,
+    "w": 16.53,
+    "h": 3.82,
+    "bubble": "bottom",
+    "capture": {
+      "width": 1758,
+      "height": 1079
+    }
+  },
+  "b01-learn-names": {
+    "want": "명칭학습",
+    "text": "명칭학습이름의 유래 · 수식 · 쉬운 풀이",
+    "x": 28.68,
+    "y": 20.15,
+    "w": 19.53,
+    "h": 7.34,
+    "bubble": "bottom",
+    "capture": {
+      "width": 1758,
+      "height": 1079
+    }
+  },
+  "b02-learn-beginner": {
+    "want": "초급",
+    "text": "초급자료 요약과 두세 집단 비교 · 9종",
+    "x": 48.78,
+    "y": 20.15,
+    "w": 19.53,
+    "h": 7.34,
+    "bubble": "bottom",
+    "capture": {
+      "width": 1758,
+      "height": 1079
+    }
+  },
+  "b03-learn-mid": {
+    "want": "중급",
+    "text": "중급회귀와 분산분석의 확장 · 15종",
+    "x": 68.88,
+    "y": 20.15,
+    "w": 19.53,
+    "h": 7.34,
+    "bubble": "bottom",
+    "capture": {
+      "width": 1758,
+      "height": 1079
+    }
+  },
+  "b04-learn-adv": {
+    "want": "고급",
+    "text": "고급잠재변수 · 다층 · 종단 · 19종",
+    "x": 88.98,
+    "y": 20.15,
+    "w": 19.53,
+    "h": 7.34,
+    "bubble": "bottom",
+    "capture": {
+      "width": 1758,
+      "height": 1079
+    }
+  },
+  "b05-library": {
+    "want": "통계방법 라이브러리",
+    "text": "통계방법 라이브러리",
+    "x": 8.19,
+    "y": 41.47,
+    "w": 14.4,
+    "h": 4.42,
+    "bubble": "right",
+    "capture": {
+      "width": 1758,
+      "height": 1079
+    }
+  },
+  "b06-analysis": {
+    "want": "통계분석작업하기",
+    "text": "통계분석작업하기",
+    "x": 8.19,
+    "y": 60.24,
+    "w": 14.4,
+    "h": 4.42,
+    "bubble": "right",
+    "capture": {
+      "width": 1758,
+      "height": 1079
+    }
+  }
+}

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>methodos / StudiumR 절차 가이드 · Methodos Lab</title>
+  <link rel="icon" href="../../../../assets/logo/methodos-lab-logo.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../procedure-shared/procedure.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="topbar__brand">
+        <img src="../../../../assets/logo/methodos-lab-logo.svg" alt="" />
+        <span>methodos / StudiumR</span>
+      </div>
+      <a class="topbar__back" href="../../tutorials.html">← 튜토리얼</a>
+    </header>
+    <section class="hero">
+      <div class="hero__copy">
+        <p class="hero__kicker">Cloud · AI Research</p>
+        <h1 class="hero__brand">methodos / StudiumR</h1>
+        <p class="hero__title">연구방법 OS와 End-to-End AI Research 실행 가이드</p>
+        <div class="hero__cta">
+          <a class="btn btn--ghost" href="#methodos">methodos</a><a class="btn btn--ghost" href="#studiumr">StudiumR</a>
+          <a class="btn btn--primary" href="https://methodos-eight.vercel.app/app" target="_blank" rel="noopener">methodos 열기</a><a class="btn btn--ghost" href="https://ai-research-os-web.vercel.app/dashboard" target="_blank" rel="noopener">StudiumR</a>
+        </div>
+      </div>
+      <div class="hero__panel"><div class="hero__pillar"><span class="hero__pillar-n">01</span><div><strong>methodos</strong><span>방법 추천·워크벤치</span></div></div><div class="hero__pillar"><span class="hero__pillar-n">02</span><div><strong>StudiumR</strong><span>트랙·작성·크리틱</span></div></div><div class="hero__pillar"><span class="hero__pillar-n">03</span><div><strong>Cloud</strong><span>브라우저에서 바로</span></div></div></div>
+    </section>
+    <div id="guide-root"></div>
+    <p class="foot">© Methodos Lab</p>
+  </div>
+  <script src="../procedure-shared/procedure.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      MethodosProcedure.mount("#guide-root", {
+  sections: [
+  {
+    "id": "methodos",
+    "eyebrow": "핵심 절차 A",
+    "title": "methodos · 방법 추천 → 워크벤치",
+    "sub": "열기 → 로그인 → 방법 추천 → 프로세스 → 워크벤치 → 검토·검증",
+    "shotNote": "실제 Cloud 화면 캡처와 번호 핀을 따라가세요.",
+    "play": "절차 재생",
+    "pause": "일시정지",
+    "replay": "처음부터",
+    "menuLabel": "화면",
+    "clickHint": "여기를 클릭",
+    "railTitle": "methodos",
+    "railItems": [
+      "홈",
+      "추천",
+      "프로세스",
+      "워크벤치",
+      "검토"
+    ],
+    "steps": [
+      {
+        "n": "01",
+        "menu": "methodos 홈",
+        "title": "methodos 열기",
+        "action": "브라우저에서 methodos를 엽니다",
+        "detail": "https://methodos-eight.vercel.app/ 로 시작합니다.",
+        "shot": "./shots/a01-methodos.png",
+        "chips": [
+          "열기"
+        ],
+        "x": 50,
+        "y": 42
+      },
+      {
+        "n": "02",
+        "menu": "/app",
+        "title": "워크스페이스 진입",
+        "action": "앱 화면으로 이동합니다",
+        "detail": "로그인 후 연구방법 OS 워크스페이스에 들어갑니다.",
+        "shot": "./shots/a02-methodos-app.png",
+        "chips": [
+          "진입"
+        ],
+        "x": 50,
+        "y": 48
+      },
+      {
+        "n": "03",
+        "menu": "방법 추천",
+        "title": "방법 추천",
+        "action": "연구 질문에 맞는 방법을 추천받습니다",
+        "detail": "목적·자료 유형을 입력하면 후보 방법이 제시됩니다.",
+        "chips": [
+          "추천"
+        ],
+        "x": 40,
+        "y": 45
+      },
+      {
+        "n": "04",
+        "menu": "프로세스",
+        "title": "프로세스 확인",
+        "action": "추천 방법의 절차 카드를 확인합니다",
+        "detail": "단계별 산출물과 체크포인트를 봅니다.",
+        "chips": [
+          "프로세스"
+        ],
+        "x": 55,
+        "y": 50
+      },
+      {
+        "n": "05",
+        "menu": "워크벤치",
+        "title": "워크벤치 작업",
+        "action": "워크벤치에서 단계 작업을 진행합니다",
+        "detail": "가이드 질문에 답하며 산출물을 채웁니다.",
+        "chips": [
+          "워크벤치"
+        ],
+        "x": 60,
+        "y": 52
+      },
+      {
+        "n": "06",
+        "menu": "검토·검증",
+        "title": "검토·검증",
+        "action": "검토·검증 단계로 결과의 타당성을 점검합니다",
+        "detail": "누락·비약을 고친 뒤 다음 단계로 넘깁니다.",
+        "chips": [
+          "검토"
+        ],
+        "x": 65,
+        "y": 55
+      }
+    ]
+  },
+  {
+    "id": "studiumr",
+    "eyebrow": "핵심 절차 B",
+    "title": "StudiumR · 대시보드 → 트랙",
+    "sub": "대시보드 → 로그인 → 트랙 선택 → 문헌·설계 → 작성 → 크리틱",
+    "shotNote": "AI Research OS 대시보드 흐름을 번호로 따라갑니다.",
+    "play": "절차 재생",
+    "pause": "일시정지",
+    "replay": "처음부터",
+    "menuLabel": "화면",
+    "clickHint": "여기를 클릭",
+    "railTitle": "StudiumR",
+    "railItems": [
+      "대시보드",
+      "트랙",
+      "문헌",
+      "작성",
+      "크리틱"
+    ],
+    "steps": [
+      {
+        "n": "01",
+        "menu": "StudiumR 홈",
+        "title": "StudiumR 열기",
+        "action": "StudiumR 사이트에 접속합니다",
+        "detail": "https://ai-research-os-web.vercel.app/ 로 시작합니다.",
+        "shot": "./shots/b01-studiumr.png",
+        "chips": [
+          "열기"
+        ],
+        "x": 50,
+        "y": 40
+      },
+      {
+        "n": "02",
+        "menu": "/dashboard",
+        "title": "대시보드·로그인",
+        "action": "대시보드에서 로그인합니다",
+        "detail": "Google·GitHub·이메일로 진입합니다.",
+        "shot": "./shots/b02-dashboard.png",
+        "chips": [
+          "로그인"
+        ],
+        "x": 50,
+        "y": 52
+      },
+      {
+        "n": "03",
+        "menu": "트랙 선택",
+        "title": "트랙 선택",
+        "action": "연구준비자 또는 연구자 트랙을 고릅니다",
+        "detail": "RDOS / AI-Research-OS 목적에 맞게 선택합니다.",
+        "chips": [
+          "트랙"
+        ],
+        "x": 42,
+        "y": 48
+      },
+      {
+        "n": "04",
+        "menu": "문헌·설계",
+        "title": "문헌·설계",
+        "action": "문헌 탐색과 연구설계를 진행합니다",
+        "detail": "주제·질문·설계 초안을 워크스페이스에 쌓습니다.",
+        "chips": [
+          "문헌",
+          "설계"
+        ],
+        "x": 55,
+        "y": 50
+      },
+      {
+        "n": "05",
+        "menu": "작성",
+        "title": "작성",
+        "action": "원고·산출물 작성을 이어갑니다",
+        "detail": "섹션별로 초안을 채우고 근거를 연결합니다.",
+        "chips": [
+          "작성"
+        ],
+        "x": 60,
+        "y": 52
+      },
+      {
+        "n": "06",
+        "menu": "크리틱",
+        "title": "크리틱",
+        "action": "크리틱으로 논리·근거를 점검합니다",
+        "detail": "피드백을 반영해 End-to-End 연구를 마무리합니다.",
+        "chips": [
+          "크리틱"
+        ],
+        "x": 65,
+        "y": 55
+      }
+    ]
+  }
+]
+});
+    });
+  </script>
+</body>
+</html>

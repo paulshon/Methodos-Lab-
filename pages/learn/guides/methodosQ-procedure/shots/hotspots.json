@@ -1,0 +1,100 @@
+{
+  "a01-example": {
+    "x": 9,
+    "y": 78,
+    "w": 12,
+    "h": 3.5,
+    "bubble": "right"
+  },
+  "a02-focus": {
+    "x": 9,
+    "y": 32,
+    "w": 12,
+    "h": 3.5,
+    "bubble": "right"
+  },
+  "a03-concourse": {
+    "x": 9,
+    "y": 37,
+    "w": 12,
+    "h": 3.5,
+    "bubble": "right"
+  },
+  "a04-qsample": {
+    "x": 9,
+    "y": 42,
+    "w": 12,
+    "h": 3.5,
+    "bubble": "right"
+  },
+  "a05-psample": {
+    "x": 9,
+    "y": 47,
+    "w": 12,
+    "h": 3.5,
+    "bubble": "right"
+  },
+  "a06-qsort": {
+    "x": 9,
+    "y": 52,
+    "w": 12,
+    "h": 3.5,
+    "bubble": "right"
+  },
+  "a07-factor": {
+    "x": 9,
+    "y": 57,
+    "w": 12,
+    "h": 3.5,
+    "bubble": "right"
+  },
+  "a08-charts": {
+    "x": 9,
+    "y": 62,
+    "w": 12,
+    "h": 3.5,
+    "bubble": "right"
+  },
+  "a09-interpret": {
+    "x": 9,
+    "y": 67,
+    "w": 12,
+    "h": 3.5,
+    "bubble": "right"
+  },
+  "b01-learn": {
+    "x": 9,
+    "y": 82,
+    "w": 12,
+    "h": 3.5,
+    "bubble": "right"
+  },
+  "b02-learn-intro": {
+    "x": 42,
+    "y": 28,
+    "w": 10,
+    "h": 4,
+    "bubble": "bottom"
+  },
+  "b03-learn-mid": {
+    "x": 55,
+    "y": 28,
+    "w": 10,
+    "h": 4,
+    "bubble": "bottom"
+  },
+  "b04-learn-thesis": {
+    "x": 68,
+    "y": 28,
+    "w": 10,
+    "h": 4,
+    "bubble": "bottom"
+  },
+  "b05-example": {
+    "x": 9,
+    "y": 78,
+    "w": 12,
+    "h": 3.5,
+    "bubble": "right"
+  }
+}

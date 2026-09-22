@@ -1,0 +1,90 @@
+@font-face {
+  font-family: "NanumSquareNeo";
+  src: url("../fonts/NanumSquareNeo-Lt.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "NanumSquareNeo";
+  src: url("../fonts/NanumSquareNeo-Rg.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "NanumSquareNeo";
+  src: url("../fonts/NanumSquareNeo-Bd.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "NanumSquareNeo";
+  src: url("../fonts/NanumSquareNeo-Eb.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "NanumMyeongjo";
+  src: url("../fonts/NanumMyeongjo.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "NanumMyeongjo";
+  src: url("../fonts/NanumMyeongjoBold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --ink: #0b2c34;
+  --ink-soft: #1e4650;
+  --mist: #e8f2f1;
+  --sea: #2f8f88;
+  --sea-deep: #1f6b66;
+  --sand: #d5e8e4;
+  --line: rgba(11, 44, 52, 0.12);
+  --glow: rgba(47, 143, 136, 0.18);
+  --font-display: "NanumMyeongjo", "Nanum Myeongjo", serif;
+  --font-body: "NanumSquareNeo", "Nanum Square Neo", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: var(--font-body);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, #cfe8e4 0%, transparent 55%),
+    radial-gradient(900px 500px at 100% 0%, #b9d8d4 0%, transparent 50%),
+    linear-gradient(165deg, #f4faf9 0%, #e7f1ef 45%, #dfeceb 100%);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+}

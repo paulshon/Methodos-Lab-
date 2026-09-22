@@ -1,0 +1,14 @@
+{
+  "a01-example": { "x": 8.5, "y": 87, "w": 13, "h": 4, "bubble": "right" },
+  "a00-home": { "x": 36, "y": 31, "w": 18, "h": 5, "bubble": "bottom" },
+  "a00-problem": { "x": 8.5, "y": 44, "w": 13, "h": 4, "bubble": "right" },
+  "a01-load": { "x": 8.5, "y": 49.5, "w": 13, "h": 4, "bubble": "right" },
+  "a02-open": { "x": 8.5, "y": 55, "w": 13, "h": 4, "bubble": "right" },
+  "a03-axial": { "x": 8.5, "y": 60.5, "w": 13, "h": 4, "bubble": "right" },
+  "a04-selective": { "x": 8.5, "y": 66.5, "w": 13, "h": 4, "bubble": "right" },
+  "a05-graphs": { "x": 8.5, "y": 72.5, "w": 13, "h": 4, "bubble": "right" },
+  "b04-report": { "x": 8.5, "y": 78, "w": 13, "h": 4, "bubble": "right" },
+  "b02-practice": { "x": 8.5, "y": 95, "w": 13, "h": 4, "bubble": "right" },
+  "a06-progress": { "x": 40, "y": 54, "w": 18, "h": 6, "bubble": "top" },
+  "b05-export": { "x": 52, "y": 48, "w": 28, "h": 18, "bubble": "left" }
+}

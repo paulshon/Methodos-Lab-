@@ -1,0 +1,28 @@
+# dependencies
+node_modules/
+**/node_modules/
+
+# build caches
+.vite/
+**/.vite/
+dist-ssr/
+
+# local preview / capture artifacts
+_preview-*.png
+_verify_*.py
+_capture_*.mjs
+__pycache__/
+*.pyc
+
+# OS / editor
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+
+# logs / env
+*.log
+.env
+.env.*
+!.env.example
