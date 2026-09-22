@@ -12,5 +12,4 @@ Methodos Lab 공식 홈페이지 HTML 시안입니다. 최종 구현은 React로
 ## Stack note
 - Fonts: NanumSquareNeo (로컬 복사)
 - Icons: Lucide (free icon) + custom Lab logo
-- Design reference: StudiumR landing structure
-- Menu reference: JASP, jamovi, Orange
+
