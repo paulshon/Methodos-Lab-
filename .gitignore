@@ -26,3 +26,7 @@ Desktop.ini
 .env
 .env.*
 !.env.example
+
+_audit_i18n_runtime.py
+_fix_icon_i18n.py
+_verify_proc_locale.py

@@ -1,6 +1,25 @@
 <!doctype html>
 <html lang="ko">
   <head>
+<!-- methodos-locale-bridge -->
+<script>
+(function () {
+  try {
+    var lab = localStorage.getItem("methodos-lab-locale");
+    if (lab === "ko" || lab === "en" || lab === "zh") {
+      localStorage.setItem("methodos-guide-locale", lab);
+    }
+    var _set = Storage.prototype.setItem;
+    Storage.prototype.setItem = function (k, v) {
+      _set.call(this, k, v);
+      if (k === "methodos-guide-locale" && (v === "ko" || v === "en" || v === "zh")) {
+        _set.call(this, "methodos-lab-locale", v);
+      }
+    };
+  } catch (e) {}
+})();
+</script>
+
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

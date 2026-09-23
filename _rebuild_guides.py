@@ -69,7 +69,19 @@ PAGES["methodos-basic.html"] = page(
     "절차로 익히는 연구용 통계 — 소개와 절차 가이드입니다.",
     """
 <figure class="guide-hero-media">
-  <img src="methodos-thumb-ko.png" alt="Methodos Basic 소개" />
+  <div class="guide-thumb" role="img" aria-label="Methodos Basic">
+    <div class="guide-thumb__copy">
+      <p class="guide-thumb__brand">METHODOS BASIC</p>
+      <p class="guide-thumb__tag" data-i18n="thumb.tagline">절차로 익히는 연구 통계</p>
+    </div>
+    <ol class="guide-thumb__steps">
+      <li><span class="guide-thumb__n">01</span><strong>DATA</strong><small data-i18n="thumb.s1">데이터 수집</small></li>
+      <li><span class="guide-thumb__n">02</span><strong>FORMAT</strong><small data-i18n="thumb.s2">자료 구조화</small></li>
+      <li><span class="guide-thumb__n">03</span><strong>VARIABLES</strong><small data-i18n="thumb.s3">변수 설정</small></li>
+      <li><span class="guide-thumb__n">04</span><strong>ANALYZE</strong><small data-i18n="thumb.s4">분석 수행</small></li>
+      <li><span class="guide-thumb__n">05</span><strong>INTERPRET</strong><small data-i18n="thumb.s5">결과 해석</small></li>
+    </ol>
+  </div>
 </figure>
 <div class="info-card guide-lead-card">
   <h3>Methodos Basic LT-4</h3>

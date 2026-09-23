@@ -955,8 +955,108 @@ a.info-card:hover {
 .tutorial-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.55rem;
+  align-items: center;
+  gap: 0.75rem 1rem;
   margin-top: 0.85rem !important;
+}
+
+.video-guide {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+  padding: 0.28rem 0.35rem 0.28rem 0.75rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(15, 61, 69, 0.06), rgba(47, 143, 136, 0.1));
+  border: 1px solid rgba(15, 61, 69, 0.12);
+}
+
+.video-guide__label {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--teal-deep);
+  letter-spacing: -0.01em;
+}
+
+.video-guide__langs {
+  display: inline-flex;
+  gap: 0.2rem;
+}
+
+.video-lang {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.1rem;
+  height: 1.85rem;
+  padding: 0 0.55rem;
+  border-radius: 999px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.15s;
+}
+
+.video-lang:hover {
+  background: var(--teal-deep);
+  border-color: var(--teal-deep);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
+  padding: 0.2rem;
+  border-radius: 999px;
+  background: rgba(12, 40, 52, 0.06);
+  border: 1px solid var(--line);
+  margin-right: 0.35rem;
+}
+
+.lang-switch__btn {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  min-width: 2rem;
+  height: 1.7rem;
+  padding: 0 0.45rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.lang-switch__btn.is-on,
+.lang-switch__btn[aria-pressed="true"] {
+  background: #132a33;
+  color: #fff;
+}
+
+.lang-switch__btn:hover:not(.is-on) {
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.mobile-lang {
+  padding: 0.75rem 1rem 0.25rem;
+}
+
+.mobile-lang .lang-switch {
+  width: 100%;
+  justify-content: stretch;
+}
+
+.mobile-lang .lang-switch__btn {
+  flex: 1;
 }
 
 /* Guide continuity */
@@ -1016,6 +1116,91 @@ a.info-card:hover {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.guide-thumb {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 1.25rem;
+  align-items: center;
+  min-height: 280px;
+  padding: 1.6rem 1.8rem;
+  background:
+    radial-gradient(circle at 78% 30%, rgba(255, 255, 255, 0.18), transparent 42%),
+    linear-gradient(125deg, #0b4f57 0%, #14707a 42%, #4aa8a0 100%);
+  color: #fff;
+}
+
+.guide-thumb__brand {
+  margin: 0;
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  font-size: clamp(1.8rem, 3.4vw, 2.7rem);
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+}
+
+.guide-thumb__tag {
+  margin: 0.85rem 0 0;
+  max-width: 16rem;
+  padding-top: 0.75rem;
+  border-top: 2px solid rgba(126, 214, 203, 0.85);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.guide-thumb__steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.guide-thumb__steps li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 0.55rem;
+  row-gap: 0.1rem;
+  align-items: center;
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px 12px 12px 999px;
+  background: rgba(232, 249, 244, 0.92);
+  color: #0f3f45;
+  box-shadow: 0 6px 16px rgba(7, 40, 45, 0.12);
+}
+
+.guide-thumb__n {
+  grid-row: 1 / span 2;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #0f5b63;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.guide-thumb__steps strong {
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+
+.guide-thumb__steps small {
+  grid-column: 2;
+  font-size: 0.78rem;
+  color: #2d5d66;
+}
+
+@media (max-width: 760px) {
+  .guide-thumb {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    padding: 1.25rem;
+  }
 }
 
 .guide-lead-card {
@@ -1249,6 +1434,11 @@ table.compare {
   .nav-desktop,
   .nav-cta {
     display: none;
+  }
+
+  .lang-switch {
+    margin-left: auto;
+    margin-right: 0.4rem;
   }
 
   .nav-toggle {

@@ -9,113 +9,125 @@ def asset(depth: str, path: str) -> str:
     return f"{depth}{path}"
 
 
+def lang_switch() -> str:
+    return """
+<div class="lang-switch" role="group" aria-label="Language">
+  <button type="button" class="lang-switch__btn" data-locale="ko" aria-pressed="true">KO</button>
+  <button type="button" class="lang-switch__btn" data-locale="en" aria-pressed="false">EN</button>
+  <button type="button" class="lang-switch__btn" data-locale="zh" aria-pressed="false">ZH</button>
+</div>
+"""
+
+
 def nav(depth: str) -> str:
     a = lambda p: asset(depth, p)
     return f"""
 <header class="site-header">
   <div class="container nav-inner">
     <a class="brand" href="{a('index.html')}">
-      <img src="{a('assets/logo/methodos-lab-logo.svg')}" alt="Methodos Lab 로고" />
+      <img src="{a('assets/logo/methodos-lab-logo.svg')}" alt="Methodos Lab" />
       <span>Methodos <em>Lab</em></span>
     </a>
-    <nav class="nav-desktop" aria-label="주 메뉴">
+    <nav class="nav-desktop" aria-label="주 메뉴" data-i18n-aria="nav.aria">
       <div class="nav-item">
-        <a class="nav-link" href="{a('pages/products/index.html')}" aria-haspopup="true" aria-expanded="false">제품 <img class="chev" src="{a('assets/icons/chevron-down.svg')}" alt="" /></a>
+        <a class="nav-link" href="{a('pages/products/index.html')}" aria-haspopup="true" aria-expanded="false"><span data-i18n="nav.products">제품</span> <img class="chev" src="{a('assets/icons/chevron-down.svg')}" alt="" /></a>
         <div class="dropdown wide" role="menu">
-          <div class="drop-label">Desktop · 설치형</div>
-          <a class="drop-item" href="{a('pages/products/methodos-basic.html')}"><img src="{a('assets/icons/bar-chart-3.svg')}" alt="" /><span><strong>methodos-basic</strong><small>통계분석 프로그램</small></span></a>
-          <a class="drop-item" href="{a('pages/products/methodosQ.html')}"><img src="{a('assets/icons/layers.svg')}" alt="" /><span><strong>methodosQ</strong><small>Q방법론 분석</small></span></a>
-          <a class="drop-item" href="{a('pages/products/methodosG.html')}"><img src="{a('assets/icons/network.svg')}" alt="" /><span><strong>methodosG</strong><small>근거이론 분석</small></span></a>
-          <div class="drop-label">Cloud · SaaS</div>
-          <a class="drop-item" href="{a('pages/products/methodos.html')}"><img src="{a('assets/icons/workflow.svg')}" alt="" /><span><strong>methodos</strong><small>절차적 단계 AI 연구방법</small></span></a>
-          <a class="drop-item" href="{a('pages/products/studiumr.html')}"><img src="{a('assets/icons/brain.svg')}" alt="" /><span><strong>StudiumR</strong><small>End-to-End AI Research OS</small></span></a>
-          <a class="drop-item" href="{a('pages/products/compare.html')}"><img src="{a('assets/icons/layout-dashboard.svg')}" alt="" /><span><strong>제품 비교</strong><small>Desktop / SaaS 한눈에</small></span></a>
+          <div class="drop-label" data-i18n="nav.desktop">Desktop · 설치형</div>
+          <a class="drop-item" href="{a('pages/products/methodos-basic.html')}"><img src="{a('assets/icons/bar-chart-3.svg')}" alt="" /><span><strong>methodos-basic</strong><small data-i18n="nav.basic.desc">통계분석 프로그램</small></span></a>
+          <a class="drop-item" href="{a('pages/products/methodosQ.html')}"><img src="{a('assets/icons/layers.svg')}" alt="" /><span><strong>methodosQ</strong><small data-i18n="nav.q.desc">Q방법론 분석</small></span></a>
+          <a class="drop-item" href="{a('pages/products/methodosG.html')}"><img src="{a('assets/icons/network.svg')}" alt="" /><span><strong>methodosG</strong><small data-i18n="nav.g.desc">근거이론 분석</small></span></a>
+          <div class="drop-label" data-i18n="nav.cloud">Cloud · SaaS</div>
+          <a class="drop-item" href="{a('pages/products/methodos.html')}"><img src="{a('assets/icons/workflow.svg')}" alt="" /><span><strong>methodos</strong><small data-i18n="nav.methodos.desc">절차적 단계 AI 연구방법</small></span></a>
+          <a class="drop-item" href="{a('pages/products/studiumr.html')}"><img src="{a('assets/icons/brain.svg')}" alt="" /><span><strong>StudiumR</strong><small data-i18n="nav.studiumr.desc">End-to-End AI Research OS</small></span></a>
+          <a class="drop-item" href="{a('pages/products/compare.html')}"><img src="{a('assets/icons/layout-dashboard.svg')}" alt="" /><span><strong data-i18n="nav.compare">제품 비교</strong><small data-i18n="nav.compare.desc">Desktop / SaaS 한눈에</small></span></a>
         </div>
       </div>
       <div class="nav-item">
-        <a class="nav-link" href="{a('pages/download/index.html')}" aria-haspopup="true" aria-expanded="false">다운로드 <img class="chev" src="{a('assets/icons/chevron-down.svg')}" alt="" /></a>
+        <a class="nav-link" href="{a('pages/download/index.html')}" aria-haspopup="true" aria-expanded="false"><span data-i18n="nav.download">다운로드</span> <img class="chev" src="{a('assets/icons/chevron-down.svg')}" alt="" /></a>
         <div class="dropdown" role="menu">
-          <a class="drop-item" href="{a('pages/download/desktop.html')}"><img src="{a('assets/icons/download.svg')}" alt="" /><span><strong>Desktop 설치</strong><small>basic · Q · G</small></span></a>
-          <a class="drop-item" href="{a('pages/download/saas.html')}"><img src="{a('assets/icons/cloud.svg')}" alt="" /><span><strong>Cloud 시작</strong><small>methodos · StudiumR</small></span></a>
-          <a class="drop-item" href="{a('pages/download/requirements.html')}"><img src="{a('assets/icons/monitor.svg')}" alt="" /><span><strong>시스템 요구사항</strong><small>권장 사양</small></span></a>
+          <a class="drop-item" href="{a('pages/download/desktop.html')}"><img src="{a('assets/icons/download.svg')}" alt="" /><span><strong data-i18n="nav.desktopInstall">Desktop 설치</strong><small data-i18n="nav.desktopInstall.desc">basic · Q · G</small></span></a>
+          <a class="drop-item" href="{a('pages/download/saas.html')}"><img src="{a('assets/icons/cloud.svg')}" alt="" /><span><strong data-i18n="nav.cloudStart">Cloud 시작</strong><small data-i18n="nav.cloudStart.desc">methodos · StudiumR</small></span></a>
+          <a class="drop-item" href="{a('pages/download/requirements.html')}"><img src="{a('assets/icons/monitor.svg')}" alt="" /><span><strong data-i18n="nav.requirements">시스템 요구사항</strong><small data-i18n="nav.requirements.desc">권장 사양</small></span></a>
         </div>
       </div>
       <div class="nav-item">
-        <a class="nav-link" href="{a('pages/learn/getting-started.html')}" aria-haspopup="true" aria-expanded="false">학습 <img class="chev" src="{a('assets/icons/chevron-down.svg')}" alt="" /></a>
+        <a class="nav-link" href="{a('pages/learn/getting-started.html')}" aria-haspopup="true" aria-expanded="false"><span data-i18n="nav.learn">학습</span> <img class="chev" src="{a('assets/icons/chevron-down.svg')}" alt="" /></a>
         <div class="dropdown" role="menu">
-          <a class="drop-item" href="{a('pages/learn/getting-started.html')}"><img src="{a('assets/icons/compass.svg')}" alt="" /><span><strong>시작하기</strong><small>첫 실행 가이드</small></span></a>
-          <a class="drop-item" href="{a('pages/learn/guides.html')}"><img src="{a('assets/icons/book-open.svg')}" alt="" /><span><strong>사용자 가이드</strong><small>가이드</small></span></a>
-          <a class="drop-item" href="{a('pages/learn/tutorials.html')}"><img src="{a('assets/icons/video.svg')}" alt="" /><span><strong>튜토리얼</strong><small>영상</small></span></a>
+          <a class="drop-item" href="{a('pages/learn/getting-started.html')}"><img src="{a('assets/icons/compass.svg')}" alt="" /><span><strong data-i18n="nav.gettingStarted">시작하기</strong><small data-i18n="nav.gettingStarted.desc">첫 실행 가이드</small></span></a>
+          <a class="drop-item" href="{a('pages/learn/guides.html')}"><img src="{a('assets/icons/book-open.svg')}" alt="" /><span><strong data-i18n="nav.guides">사용자 가이드</strong><small data-i18n="nav.guides.desc">가이드</small></span></a>
+          <a class="drop-item" href="{a('pages/learn/tutorials.html')}"><img src="{a('assets/icons/video.svg')}" alt="" /><span><strong data-i18n="nav.tutorials">튜토리얼</strong><small data-i18n="nav.tutorials.desc">영상</small></span></a>
         </div>
       </div>
       <div class="nav-item">
-        <a class="nav-link" href="{a('pages/community/index.html')}" aria-haspopup="true" aria-expanded="false">커뮤니티 <img class="chev" src="{a('assets/icons/chevron-down.svg')}" alt="" /></a>
+        <a class="nav-link" href="{a('pages/community/index.html')}" aria-haspopup="true" aria-expanded="false"><span data-i18n="nav.community">커뮤니티</span> <img class="chev" src="{a('assets/icons/chevron-down.svg')}" alt="" /></a>
         <div class="dropdown" role="menu">
-          <a class="drop-item" href="{a('pages/community/blog.html')}"><img src="{a('assets/icons/file-text.svg')}" alt="" /><span><strong>블로그</strong><small>소식</small></span></a>
+          <a class="drop-item" href="{a('pages/community/blog.html')}"><img src="{a('assets/icons/file-text.svg')}" alt="" /><span><strong data-i18n="nav.blog">블로그</strong><small data-i18n="nav.blog.desc">소식</small></span></a>
         </div>
       </div>
       <div class="nav-item">
-        <a class="nav-link" href="{a('pages/about/lab.html')}" aria-haspopup="true" aria-expanded="false">소개 <img class="chev" src="{a('assets/icons/chevron-down.svg')}" alt="" /></a>
+        <a class="nav-link" href="{a('pages/about/lab.html')}" aria-haspopup="true" aria-expanded="false"><span data-i18n="nav.about">소개</span> <img class="chev" src="{a('assets/icons/chevron-down.svg')}" alt="" /></a>
         <div class="dropdown" role="menu">
-          <a class="drop-item" href="{a('pages/about/lab.html')}"><img src="{a('assets/icons/flask-conical.svg')}" alt="" /><span><strong>Methodos Lab</strong><small>연구소 소개</small></span></a>
-          <a class="drop-item" href="{a('pages/about/mission.html')}"><img src="{a('assets/icons/target.svg')}" alt="" /><span><strong>미션</strong><small>비전과 목표</small></span></a>
-          <a class="drop-item" href="{a('pages/about/contact.html')}"><img src="{a('assets/icons/mail.svg')}" alt="" /><span><strong>문의</strong><small>Contact</small></span></a>
+          <a class="drop-item" href="{a('pages/about/lab.html')}"><img src="{a('assets/icons/flask-conical.svg')}" alt="" /><span><strong>Methodos Lab</strong><small data-i18n="nav.lab.desc">연구소 소개</small></span></a>
+          <a class="drop-item" href="{a('pages/about/mission.html')}"><img src="{a('assets/icons/target.svg')}" alt="" /><span><strong data-i18n="nav.mission">미션</strong><small data-i18n="nav.mission.desc">비전과 목표</small></span></a>
+          <a class="drop-item" href="{a('pages/about/contact.html')}"><img src="{a('assets/icons/mail.svg')}" alt="" /><span><strong data-i18n="nav.contact">문의</strong><small>Contact</small></span></a>
         </div>
       </div>
     </nav>
-    <a class="nav-cta" href="https://ai-research-os-web.vercel.app/" target="_blank" rel="noopener">StudiumR 열기 <img src="{a('assets/icons/arrow-right.svg')}" alt="" /></a>
-    <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" data-icon-depth="{depth}">
+    {lang_switch()}
+    <a class="nav-cta" href="https://ai-research-os-web.vercel.app/" target="_blank" rel="noopener"><span data-i18n="nav.cta">StudiumR 열기</span> <img src="{a('assets/icons/arrow-right.svg')}" alt="" /></a>
+    <button class="nav-toggle" type="button" aria-label="메뉴 열기" data-i18n-aria="nav.menu" aria-expanded="false" data-icon-depth="{depth}">
       <img src="{a('assets/icons/menu.svg')}" alt="메뉴" />
     </button>
   </div>
 </header>
 <div class="mobile-panel" id="mobile-panel">
+  <div class="mobile-lang">{lang_switch()}</div>
   <div class="mobile-group">
-    <button type="button">제품 <img src="{a('assets/icons/chevron-down.svg')}" width="16" height="16" alt="" /></button>
+    <button type="button"><span data-i18n="nav.products">제품</span> <img src="{a('assets/icons/chevron-down.svg')}" width="16" height="16" alt="" /></button>
     <div class="mobile-links">
-      <a href="{a('pages/products/index.html')}">제품 개요</a>
+      <a href="{a('pages/products/index.html')}" data-i18n="nav.productsOverview">제품 개요</a>
       <a href="{a('pages/products/methodos-basic.html')}">methodos-basic</a>
       <a href="{a('pages/products/methodosQ.html')}">methodosQ</a>
       <a href="{a('pages/products/methodosG.html')}">methodosG</a>
       <a href="{a('pages/products/methodos.html')}">methodos (SaaS)</a>
       <a href="{a('pages/products/studiumr.html')}">StudiumR (SaaS)</a>
-      <a href="{a('pages/products/compare.html')}">제품 비교</a>
+      <a href="{a('pages/products/compare.html')}" data-i18n="nav.compare">제품 비교</a>
     </div>
   </div>
   <div class="mobile-group">
-    <button type="button">다운로드 <img src="{a('assets/icons/chevron-down.svg')}" width="16" height="16" alt="" /></button>
+    <button type="button"><span data-i18n="nav.download">다운로드</span> <img src="{a('assets/icons/chevron-down.svg')}" width="16" height="16" alt="" /></button>
     <div class="mobile-links">
-      <a href="{a('pages/download/index.html')}">다운로드 홈</a>
-      <a href="{a('pages/download/desktop.html')}">Desktop 설치</a>
-      <a href="{a('pages/download/saas.html')}">Cloud 시작</a>
-      <a href="{a('pages/download/requirements.html')}">시스템 요구사항</a>
+      <a href="{a('pages/download/index.html')}" data-i18n="nav.downloadHome">다운로드 홈</a>
+      <a href="{a('pages/download/desktop.html')}" data-i18n="nav.desktopInstall">Desktop 설치</a>
+      <a href="{a('pages/download/saas.html')}" data-i18n="nav.cloudStart">Cloud 시작</a>
+      <a href="{a('pages/download/requirements.html')}" data-i18n="nav.requirements">시스템 요구사항</a>
     </div>
   </div>
   <div class="mobile-group">
-    <button type="button">학습 <img src="{a('assets/icons/chevron-down.svg')}" width="16" height="16" alt="" /></button>
+    <button type="button"><span data-i18n="nav.learn">학습</span> <img src="{a('assets/icons/chevron-down.svg')}" width="16" height="16" alt="" /></button>
     <div class="mobile-links">
-      <a href="{a('pages/learn/getting-started.html')}">시작하기</a>
-      <a href="{a('pages/learn/guides.html')}">사용자 가이드</a>
-      <a href="{a('pages/learn/tutorials.html')}">튜토리얼</a>
+      <a href="{a('pages/learn/getting-started.html')}" data-i18n="nav.gettingStarted">시작하기</a>
+      <a href="{a('pages/learn/guides.html')}" data-i18n="nav.guides">사용자 가이드</a>
+      <a href="{a('pages/learn/tutorials.html')}" data-i18n="nav.tutorials">튜토리얼</a>
     </div>
   </div>
   <div class="mobile-group">
-    <button type="button">커뮤니티 <img src="{a('assets/icons/chevron-down.svg')}" width="16" height="16" alt="" /></button>
+    <button type="button"><span data-i18n="nav.community">커뮤니티</span> <img src="{a('assets/icons/chevron-down.svg')}" width="16" height="16" alt="" /></button>
     <div class="mobile-links">
-      <a href="{a('pages/community/blog.html')}">블로그</a>
+      <a href="{a('pages/community/blog.html')}" data-i18n="nav.blog">블로그</a>
     </div>
   </div>
   <div class="mobile-group">
-    <button type="button">소개 <img src="{a('assets/icons/chevron-down.svg')}" width="16" height="16" alt="" /></button>
+    <button type="button"><span data-i18n="nav.about">소개</span> <img src="{a('assets/icons/chevron-down.svg')}" width="16" height="16" alt="" /></button>
     <div class="mobile-links">
       <a href="{a('pages/about/lab.html')}">Methodos Lab</a>
-      <a href="{a('pages/about/mission.html')}">미션</a>
-      <a href="{a('pages/about/contact.html')}">문의</a>
+      <a href="{a('pages/about/mission.html')}" data-i18n="nav.mission">미션</a>
+      <a href="{a('pages/about/contact.html')}" data-i18n="nav.contact">문의</a>
     </div>
   </div>
   <div class="mobile-cta">
-    <a class="btn btn-solid" href="https://ai-research-os-web.vercel.app/" target="_blank" rel="noopener">StudiumR 열기</a>
-    <a class="btn btn-outline" href="https://methodos-eight.vercel.app/" target="_blank" rel="noopener">methodos 열기</a>
+    <a class="btn btn-solid" href="https://ai-research-os-web.vercel.app/" target="_blank" rel="noopener" data-i18n="nav.cta">StudiumR 열기</a>
+    <a class="btn btn-outline" href="https://methodos-eight.vercel.app/" target="_blank" rel="noopener" data-i18n="nav.methodosOpen">methodos 열기</a>
   </div>
 </div>
 """
@@ -131,7 +143,7 @@ def footer(depth: str) -> str:
         <img src="{a('assets/logo/methodos-lab-logo.svg')}" alt="" />
         <div>
           <strong>Methodos Lab</strong>
-          <p>연구방법을 위한 Desktop 분석 도구와 AI Research SaaS를 만드는 연구소입니다.</p>
+          <p data-i18n="footer.blurb">연구방법을 위한 Desktop 분석 도구와 AI Research SaaS를 만드는 연구소입니다.</p>
         </div>
       </div>
       <div class="footer-col">
@@ -143,35 +155,37 @@ def footer(depth: str) -> str:
         <a href="{a('pages/products/studiumr.html')}">StudiumR</a>
       </div>
       <div class="footer-col">
-        <h4>Resources</h4>
-        <a href="{a('pages/learn/getting-started.html')}">시작하기</a>
-        <a href="{a('pages/download/index.html')}">다운로드</a>
+        <h4 data-i18n="footer.resources">Resources</h4>
+        <a href="{a('pages/learn/getting-started.html')}" data-i18n="nav.gettingStarted">시작하기</a>
+        <a href="{a('pages/download/index.html')}" data-i18n="nav.download">다운로드</a>
         </div>
       <div class="footer-col">
-        <h4>Lab</h4>
-        <a href="{a('pages/about/lab.html')}">소개</a>
-        <a href="{a('pages/about/mission.html')}">미션</a>
-        <a href="{a('pages/about/contact.html')}">문의</a>
+        <h4 data-i18n="footer.lab">Lab</h4>
+        <a href="{a('pages/about/lab.html')}" data-i18n="nav.about">소개</a>
+        <a href="{a('pages/about/mission.html')}" data-i18n="nav.mission">미션</a>
+        <a href="{a('pages/about/contact.html')}" data-i18n="nav.contact">문의</a>
         </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Methodos Lab</span>
-      <span>Research methods · Desktop &amp; SaaS</span>
+      <span data-i18n="footer.tag">Research methods · Desktop &amp; SaaS</span>
     </div>
   </div>
 </footer>
 """
 
 
-def page(title: str, depth: str, body: str, description: str = "") -> str:
+def page(title: str, depth: str, body: str, description: str = "", title_key: str = "") -> str:
     desc = description or f"{title} — Methodos Lab"
+    tkey = title_key or ""
+    title_attr = f' data-i18n-title="{tkey}"' if tkey else ""
     return f"""<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="{desc}" />
-  <title>{title} · Methodos Lab</title>
+  <title{title_attr}>{title} · Methodos Lab</title>
   <link rel="icon" href="{asset(depth, 'assets/logo/methodos-lab-logo.svg')}" type="image/svg+xml" />
   <link rel="stylesheet" href="{asset(depth, 'css/styles.css')}" />
 </head>
@@ -181,6 +195,8 @@ def page(title: str, depth: str, body: str, description: str = "") -> str:
 {body}
 </main>
 {footer(depth)}
+<script src="{asset(depth, 'js/i18n-dict.js')}"></script>
+<script src="{asset(depth, 'js/i18n.js')}"></script>
 <script src="{asset(depth, 'js/main.js')}"></script>
 </body>
 </html>
@@ -189,13 +205,31 @@ def page(title: str, depth: str, body: str, description: str = "") -> str:
 
 def crumbs(items):
     parts = []
-    for i, (label, href) in enumerate(items):
-        if href and i < len(items) - 1:
-            parts.append(f'<a href="{href}">{label}</a><span>/</span>')
+    for i, item in enumerate(items):
+        if len(item) == 3:
+            label, href, key = item
         else:
-            parts.append(f"<span>{label}</span>")
+            label, href = item
+            key = None
+        attr = f' data-i18n="{key}"' if key else ""
+        if href and i < len(items) - 1:
+            parts.append(f'<a href="{href}"{attr}>{label}</a><span>/</span>')
+        else:
+            parts.append(f"<span{attr}>{label}</span>")
     return '<div class="breadcrumb">' + "".join(parts) + "</div>"
 
+
+def video_guide(ko: str, en: str, zh: str) -> str:
+    return f"""
+<div class="video-guide" role="group" aria-label="Video guide">
+  <span class="video-guide__label" data-i18n="tut.videoGuide">동영상 가이드</span>
+  <div class="video-guide__langs">
+    <a class="video-lang" href="{ko}" target="_blank" rel="noopener">KO</a>
+    <a class="video-lang" href="{en}" target="_blank" rel="noopener">EN</a>
+    <a class="video-lang" href="{zh}" target="_blank" rel="noopener">ZH</a>
+  </div>
+</div>
+"""
 
 # ---------- Index ----------
 index_body = f"""
@@ -205,11 +239,11 @@ index_body = f"""
       <img src="assets/logo/methodos-lab-logo.svg" alt="Methodos Lab" />
       <strong>Methodos Lab</strong>
     </div>
-    <h1>Methodos Lab은 연구 분석 방법, 문헌 연구, 논문 집필 과정에서 발생하는 복잡한 문제들을 근거 기반 AI와 절차적 솔루션으로 체계적으로 해결합니다. 이를 통해 연구자는 보다 효율적이고 신뢰성 있는 학술 성과를 도출할 수 있게 합니다.</h1>
-    <p class="lead">통계·Q방법론·근거이론 설치형 분석 프로그램과, 절차적 연구방법·엔드투엔드 AI Research SaaS까지 — 연구 실행에 필요한 도구를 Methodos Lab이 설계합니다.</p>
+    <h1 data-i18n="home.h1">Methodos Lab은 연구 분석 방법, 문헌 연구, 논문 집필 과정에서 발생하는 복잡한 문제들을 근거 기반 AI와 절차적 솔루션으로 체계적으로 해결합니다. 이를 통해 연구자는 보다 효율적이고 신뢰성 있는 학술 성과를 도출할 수 있게 합니다.</h1>
+    <p class="lead" data-i18n="home.lead">통계·Q방법론·근거이론 설치형 분석 프로그램과, 절차적 연구방법·엔드투엔드 AI Research SaaS까지 — 연구 실행에 필요한 도구를 Methodos Lab이 설계합니다.</p>
     <div class="hero-actions">
-      <a class="btn btn-primary" href="pages/products/index.html">제품 살펴보기 <img src="assets/icons/arrow-right.svg" alt="" /></a>
-      <a class="btn btn-ghost" href="https://ai-research-os-web.vercel.app/" target="_blank" rel="noopener">StudiumR 바로가기 <img class="invert" src="assets/icons/external-link.svg" alt="" /></a>
+      <a class="btn btn-primary" href="pages/products/index.html"><span data-i18n="home.ctaProducts">제품 살펴보기</span> <img src="assets/icons/arrow-right.svg" alt="" /></a>
+      <a class="btn btn-ghost" href="https://ai-research-os-web.vercel.app/" target="_blank" rel="noopener"><span data-i18n="home.ctaStudiumr">StudiumR 바로가기</span> <img class="invert" src="assets/icons/external-link.svg" alt="" /></a>
     </div>
   </div>
 </section>
@@ -218,14 +252,14 @@ index_body = f"""
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Products</span>
-      <h2>Methodos Lab 제품 구성</h2>
-      <p>Desktop용 프로그램과 SaaS용 프로그램으로 구성되어 있습니다.</p>
+      <h2 data-i18n="home.productsTitle">Methodos Lab 제품 구성</h2>
+      <p data-i18n="home.productsSub">Desktop용 프로그램과 SaaS용 프로그램으로 구성되어 있습니다.</p>
     </div>
     <div class="tracks">
       <article class="track reveal">
         <span class="badge"><img src="assets/icons/laptop.svg" width="14" height="14" alt="" style="display:inline;vertical-align:-2px;filter:invert(34%) sepia(24%) saturate(1200%) hue-rotate(131deg)" /> Desktop</span>
-        <h3>Desktop용 프로그램</h3>
-        <p>methodos-basic, methodosQ, methodosG로 구성되어 있습니다.</p>
+        <h3 data-i18n="home.desktopTitle">Desktop용 프로그램</h3>
+        <p data-i18n="home.desktopBody">methodos-basic, methodosQ, methodosG로 구성되어 있습니다.</p>
         <div class="product-list">
           <a class="product-row" href="pages/products/methodos-basic.html"><span class="meta"><span class="icon-wrap"><img src="assets/icons/bar-chart-3.svg" alt="" /></span><span><strong>methodos-basic</strong><small>통계분석 프로그램</small></span></span><span class="chip">Desktop</span></a>
           <a class="product-row" href="pages/products/methodosQ.html"><span class="meta"><span class="icon-wrap"><img src="assets/icons/layers.svg" alt="" /></span><span><strong>methodosQ</strong><small>Q방법론 분석</small></span></span><span class="chip">Desktop</span></a>
@@ -234,8 +268,8 @@ index_body = f"""
       </article>
       <article class="track saas reveal">
         <span class="badge blue"><img src="assets/icons/cloud.svg" width="14" height="14" alt="" style="display:inline;vertical-align:-2px;filter:invert(34%) sepia(40%) saturate(900%) hue-rotate(170deg)" /> SaaS</span>
-        <h3>SaaS용 프로그램</h3>
-        <p>methodos, StudiumR로 구성되어 있습니다.</p>
+        <h3 data-i18n="home.saasTitle">SaaS용 프로그램</h3>
+        <p data-i18n="home.saasBody">methodos, StudiumR로 구성되어 있습니다.</p>
         <div class="product-list">
           <a class="product-row" href="pages/products/methodos.html"><span class="meta"><span class="icon-wrap"><img src="assets/icons/workflow.svg" alt="" /></span><span><strong>methodos</strong><small>절차적 단계 AI 연구방법</small></span></span><span class="chip">SaaS</span></a>
           <a class="product-row" href="pages/products/studiumr.html"><span class="meta"><span class="icon-wrap"><img src="assets/icons/brain.svg" alt="" /></span><span><strong>StudiumR</strong><small>End-to-End AI Research</small></span></span><span class="chip">SaaS</span></a>
@@ -249,14 +283,14 @@ index_body = f"""
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Research flow</span>
-      <h2>연구 흐름을 제품이 받쳐 줍니다</h2>
-      <p>방법 선택부터 분석·검증·논문 생산까지, Lab 제품이 단계별로 연결됩니다.</p>
+      <h2 data-i18n="home.flowTitle">연구 흐름을 제품이 받쳐 줍니다</h2>
+      <p data-i18n="home.flowSub">방법 선택부터 분석·검증·논문 생산까지, Lab 제품이 단계별로 연결됩니다.</p>
     </div>
     <div class="flow">
-      <div class="flow-item reveal"><h3>방법 선택</h3><p>methodos가 연구질문·자료유형에 맞는 연구방법을 추천합니다.</p></div>
-      <div class="flow-item reveal"><h3>전문 분석</h3><p>통계·Q방법론·근거이론은 Desktop 제품으로 깊게 수행합니다.</p></div>
-      <div class="flow-item reveal"><h3>연구 프로세스</h3><p>단계 워크벤치와 검토·검증으로 절차를 남깁니다.</p></div>
-      <div class="flow-item reveal"><h3>논문 생산</h3><p>StudiumR이 문헌·작성·크리틱까지 End-to-End로 이어 줍니다.</p></div>
+      <div class="flow-item reveal"><h3 data-i18n="home.flow1">방법 선택</h3><p data-i18n="home.flow1p">methodos가 연구질문·자료유형에 맞는 연구방법을 추천합니다.</p></div>
+      <div class="flow-item reveal"><h3 data-i18n="home.flow2">전문 분석</h3><p data-i18n="home.flow2p">통계·Q방법론·근거이론은 Desktop 제품으로 깊게 수행합니다.</p></div>
+      <div class="flow-item reveal"><h3 data-i18n="home.flow3">연구 프로세스</h3><p data-i18n="home.flow3p">단계 워크벤치와 검토·검증으로 절차를 남깁니다.</p></div>
+      <div class="flow-item reveal"><h3 data-i18n="home.flow4">논문 생산</h3><p data-i18n="home.flow4p">StudiumR이 문헌·작성·크리틱까지 End-to-End로 이어 줍니다.</p></div>
     </div>
   </div>
 </section>
@@ -265,20 +299,20 @@ index_body = f"""
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Security</span>
-      <h2>로컬 우선 · 클라우드 메타데이터</h2>
-      <p>StudiumR·methodos와 같은 보안 중심 파일 체계를 Lab 전체의 원칙으로 둡니다.</p>
+      <h2 data-i18n="home.secTitle">로컬 우선 · 클라우드 메타데이터</h2>
+      <p data-i18n="home.secSub">StudiumR·methodos와 같은 보안 중심 파일 체계를 Lab 전체의 원칙으로 둡니다.</p>
     </div>
     <div class="layers">
       <div class="layer local reveal">
         <span class="badge" style="background:rgba(255,255,255,.12);color:#e8fffb">Local Storage</span>
-        <h3>연구 산출물은 PC·브라우저에</h3>
-        <p>Desktop 프로그램과 로컬 우선 SaaS가 민감 데이터를 사용자 쪽에 둡니다.</p>
+        <h3 data-i18n="home.localTitle">연구 산출물은 PC·브라우저에</h3>
+        <p data-i18n="home.localBody">Desktop 프로그램과 로컬 우선 SaaS가 민감 데이터를 사용자 쪽에 둡니다.</p>
         <div class="tag-row"><span>Projects</span><span>Datasets</span><span>Exports</span><span>AI Cache</span><span>Versions</span></div>
       </div>
       <div class="layer cloud reveal">
         <span class="badge blue" style="background:rgba(255,255,255,.12);color:#d9f0ff">Cloud Metadata</span>
-        <h3>계정·협업 상태만 동기화</h3>
-        <p>가벼운 메타데이터로 협업과 권한을 유지합니다.</p>
+        <h3 data-i18n="home.cloudTitle">계정·협업 상태만 동기화</h3>
+        <p data-i18n="home.cloudBody">가벼운 메타데이터로 협업과 권한을 유지합니다.</p>
         <div class="tag-row"><span>Account</span><span>Permissions</span><span>Sync Index</span><span>Activity</span></div>
       </div>
     </div>
@@ -289,25 +323,25 @@ index_body = f"""
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Why Methodos Lab</span>
-      <h2>연구분석도구를 쉽고 편리하고 근거있게</h2>
+      <h2 data-i18n="home.whyTitle">연구분석도구를 쉽고 편리하고 근거있게</h2>
     </div>
     <div class="feature-grid">
-      <article class="feature reveal"><img src="assets/icons/microscope.svg" alt="" /><h3>방법론 특화</h3><p>일반 통계를 넘어 Q방법론·근거이론 등 연구 분석 워크벤치를 제공합니다.</p></article>
-      <article class="feature reveal"><img src="assets/icons/cpu.svg" alt="" /><h3>AI와 절차의 결합</h3><p>연구방법 추천부터 단계 실행까지, AI가 절차를 깨지 않고 돕습니다.</p></article>
-      <article class="feature reveal"><img src="assets/icons/shield.svg" alt="" /><h3>연구자 데이터 주권</h3><p>설치형과 로컬 우선 SaaS로 연구 파일의 통제권을 사용자에게 둡니다.</p></article>
+      <article class="feature reveal"><img src="assets/icons/microscope.svg" alt="" /><h3 data-i18n="home.why1">방법론 특화</h3><p data-i18n="home.why1p">일반 통계를 넘어 Q방법론·근거이론 등 연구 분석 워크벤치를 제공합니다.</p></article>
+      <article class="feature reveal"><img src="assets/icons/cpu.svg" alt="" /><h3 data-i18n="home.why2">AI와 절차의 결합</h3><p data-i18n="home.why2p">연구방법 추천부터 단계 실행까지, AI가 절차를 깨지 않고 돕습니다.</p></article>
+      <article class="feature reveal"><img src="assets/icons/shield.svg" alt="" /><h3 data-i18n="home.why3">연구자 데이터 주권</h3><p data-i18n="home.why3p">설치형과 로컬 우선 SaaS로 연구 파일의 통제권을 사용자에게 둡니다.</p></article>
     </div>
   </div>
 </section>
 
 <div class="cta-band reveal">
   <div>
-    <h2>지금 바로 SaaS를 열어보세요</h2>
-    <p>완성된 Cloud 제품은 즉시 실행할 수 있습니다. Desktop은 다운로드 페이지에서 안내합니다.</p>
+    <h2 data-i18n="home.ctaBand">지금 바로 SaaS를 열어보세요</h2>
+    <p data-i18n="home.ctaBandP">완성된 Cloud 제품은 즉시 실행할 수 있습니다. Desktop은 다운로드 페이지에서 안내합니다.</p>
   </div>
   <div class="cta-actions">
     <a class="btn btn-primary" href="https://ai-research-os-web.vercel.app/" target="_blank" rel="noopener">StudiumR</a>
     <a class="btn btn-ghost" href="https://methodos-eight.vercel.app/" target="_blank" rel="noopener">methodos</a>
-    <a class="btn btn-ghost" href="pages/download/index.html">다운로드</a>
+    <a class="btn btn-ghost" href="pages/download/index.html" data-i18n="nav.download">다운로드</a>
   </div>
 </div>
 """
@@ -355,7 +389,7 @@ PAGES["pages/products/methodos-basic.html"] = (
 <section class="content-block"><div class="container two-col">
 <div class="prose">
   <h2>한눈에</h2>
-  <p>methodos-basic은 사회과학·교육·보건 연구자가 자주 쓰는 통계 절차를 GUI로 수행하는 Desktop 통계분석 프로그램입니다. Methodos Lab의 Desktop 트랙 기본 제품입니다.</p>
+  <p>methodos-basic은 모든 학술분야에서 연구자가 자주 쓰는 통계 절차를 GUI로 수행하는 Desktop 통계분석 프로그램입니다. Methodos Lab의 Desktop 트랙 기본 통계분석 제품입니다.</p>
   <h2>주요 기능 (요약)</h2>
   <ul>
     <li>데이터 불러오기 · 변수 관리 · 기초통계</li>
@@ -371,10 +405,10 @@ PAGES["pages/products/methodos-basic.html"] = (
   </p>
 </div>
 <aside class="side-panel">
-  <h3>바로가기</h3>
-  <a href="../download/desktop.html"><img src="../../assets/icons/download.svg" alt="" /> Desktop 다운로드</a>
-  <a href="compare.html"><img src="../../assets/icons/layout-dashboard.svg" alt="" /> 제품 비교</a>
-  <a href="../learn/guides.html"><img src="../../assets/icons/book-open.svg" alt="" /> 가이드</a>
+  <h3 data-i18n="common.shortcuts">바로가기</h3>
+  <a href="../download/desktop.html"><img src="../../assets/icons/download.svg" alt="" /> <span data-i18n="common.desktopDownload">Desktop 다운로드</span></a>
+  <a href="compare.html"><img src="../../assets/icons/layout-dashboard.svg" alt="" /> <span data-i18n="nav.compare">제품 비교</span></a>
+  <a href="../learn/guides.html"><img src="../../assets/icons/book-open.svg" alt="" /> <span data-i18n="nav.guides.desc">가이드</span></a>
 </aside>
 </div></section>
 """,
@@ -392,7 +426,7 @@ PAGES["pages/products/methodosQ.html"] = (
 <section class="content-block"><div class="container two-col">
 <div class="prose">
   <h2>한눈에</h2>
-  <p>methodosQ는 Q방법론(Q Methodology)의 표준 절차를 단계·태스크로 구조화한 설치형 분석 프로그램입니다.</p>
+  <p>methodosQ는 Q방법론(Q Methodology)의 표준 절차를 단계·태스크로 구조화한 분석 프로그램입니다.</p>
   <h2>워크플로 하이라이트</h2>
   <ul>
     <li>아키타입 기반 다단계·다태스크 진행</li>
@@ -425,7 +459,7 @@ PAGES["pages/products/methodosG.html"] = (
 <section class="content-block"><div class="container two-col">
 <div class="prose">
   <h2>한눈에</h2>
-  <p>methodosG는 근거이론 코딩·범주화·이론화 절차를 지원하는 Desktop 분석 프로그램입니다. Setup.exe와 Portable.exe로 배포됩니다.</p>
+  <p>methodosG는 근거이론 코딩·범주화·이론화 절차를 지원하는 분석 프로그램입니다.</p>
   <h2>지원 방향</h2>
   <ul>
     <li>질적 자료 코딩 워크벤치</li>
@@ -453,13 +487,13 @@ PAGES["pages/products/methodos.html"] = (
 <h1>methodos</h1>
 <p>절차적 단계 AI 연구분석방법 프로그램 — Cloud SaaS입니다.</p>
 </div></section>
-<section class="content-block"><div class="container two-col">
+<section class="content-block"><div class="container">
 <div class="prose">
   <p>methodos는 연구방법 추천·프로세스·카탈로그·11단계 워크벤치·시각화까지 한 흐름으로 지원하는 Research Methods OS입니다.</p>
   <h2>바로 실행</h2>
-  <p>라이브 서비스가 배포되어 있습니다.</p>
+  <p>실시간서비스를 지원합니다.</p>
   <p style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem">
-    <a class="btn btn-solid" href="https://methodos-eight.vercel.app/" target="_blank" rel="noopener">methodos 열기 <img class="invert" src="../../assets/icons/external-link.svg" alt="" style="width:14px;height:14px" /></a>
+    <a class="btn btn-solid" href="https://methodos-eight.vercel.app/" target="_blank" rel="noopener" data-i18n="nav.methodosOpen">methodos 열기 <img class="invert" src="../../assets/icons/external-link.svg" alt="" style="width:14px;height:14px" /></a>
   </p>
   <h2>핵심 모듈</h2>
   <div class="card-list" style="margin-top:1rem">
@@ -469,12 +503,6 @@ PAGES["pages/products/methodos.html"] = (
     <div class="info-card"><h3>검토·검증</h3><p>산출물 입력·검증·재현 기록</p></div>
   </div>
 </div>
-<aside class="side-panel">
-  <h3>라이브 링크</h3>
-  <a href="https://methodos-eight.vercel.app/" target="_blank" rel="noopener"><img src="../../assets/icons/external-link.svg" alt="" /> methodos-eight.vercel.app</a>
-  <a href="studiumr.html"><img src="../../assets/icons/brain.svg" alt="" /> StudiumR</a>
-  <a href="../download/saas.html"><img src="../../assets/icons/cloud.svg" alt="" /> Cloud 시작</a>
-</aside>
 </div></section>
 """,
 )
@@ -488,7 +516,7 @@ PAGES["pages/products/studiumr.html"] = (
 <h1>StudiumR</h1>
 <p>End-to-End AI Research 프로그램 — 연구준비자(RDOS)와 연구자(AI-Research-OS) 트랙을 제공합니다.</p>
 </div></section>
-<section class="content-block"><div class="container two-col">
+<section class="content-block"><div class="container">
 <div class="prose">
   <p>StudiumR은 문헌 연구부터 논문 구조·크리틱·참고문헌까지 이어 주는 AI Research Operating System입니다. Methodos Lab 홈페이지의 시각·섹션 포맷 레퍼런스이기도 합니다.</p>
   <p style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem">
@@ -500,11 +528,6 @@ PAGES["pages/products/studiumr.html"] = (
     <div class="track saas"><span class="badge blue">AI-Research-OS</span><h3>연구자</h3><p>석사 이상·논문 저자·교수·연구원 — 실제 연구 수행·논문 생산.</p></div>
   </div>
 </div>
-<aside class="side-panel">
-  <h3>라이브 링크</h3>
-  <a href="https://ai-research-os-web.vercel.app/" target="_blank" rel="noopener"><img src="../../assets/icons/external-link.svg" alt="" /> ai-research-os-web.vercel.app</a>
-  <a href="methodos.html"><img src="../../assets/icons/workflow.svg" alt="" /> methodos</a>
-</aside>
 </div></section>
 """,
 )
@@ -526,8 +549,8 @@ PAGES["pages/products/compare.html"] = (
     <tr><td>methodos-basic</td><td>Desktop</td><td>통계분석</td><td><a href="../download/desktop.html">다운로드 안내</a></td></tr>
     <tr><td>methodosQ</td><td>Desktop</td><td>Q방법론</td><td><a href="../download/desktop.html">다운로드 안내</a></td></tr>
     <tr><td>methodosG</td><td>Desktop</td><td>근거이론</td><td><a href="../download/desktop.html">다운로드 안내</a></td></tr>
-    <tr><td>methodos</td><td>SaaS</td><td>연구방법 OS</td><td><a href="https://methodos-eight.vercel.app/" target="_blank" rel="noopener">라이브</a></td></tr>
-    <tr><td>StudiumR</td><td>SaaS</td><td>End-to-End Research</td><td><a href="https://ai-research-os-web.vercel.app/" target="_blank" rel="noopener">라이브</a></td></tr>
+    <tr><td>methodos</td><td>SaaS</td><td>연구방법 OS</td><td><a href="https://methodos-eight.vercel.app/" target="_blank" rel="noopener">실시간 지원</a></td></tr>
+    <tr><td>StudiumR</td><td>SaaS</td><td>End-to-End Research</td><td><a href="https://ai-research-os-web.vercel.app/" target="_blank" rel="noopener">실시간 지원</a></td></tr>
   </tbody>
 </table>
 </div>
@@ -656,87 +679,90 @@ PAGES["pages/learn/tutorials.html"] = (
     "../../",
     f"""
 <section class="page-hero"><div class="container">
-{crumbs([("홈", "../../index.html"), ("학습", "getting-started.html"), ("튜토리얼", None)])}
-<h1>튜토리얼 · 영상</h1>
+{crumbs([("홈", "../../index.html", "crumb.home"), ("학습", "getting-started.html", "nav.learn"), ("튜토리얼", None, "nav.tutorials")])}
+<h1 data-i18n="tut.title">튜토리얼 · 영상</h1>
 </div></section>
 <section class="content-block"><div class="container">
 <div class="card-list">
   <article class="info-card tutorial-detail">
-    <h3>01 · methodos-basic 실행방법</h3>
-    <p>Framer Motion 절차 A·B로 예제 분석과 학습 경로를 따라가 봅니다.</p>
+    <h3 data-i18n="tut.b1">01 · methodos-basic 실행방법</h3>
+    <p data-i18n="tut.b1p">절차 A·B로 예제 분석과 학습 경로를 따라가 봅니다.</p>
     <div class="tutorial-cols">
       <div>
-        <h4>절차 A · 예제를 통한 분석</h4>
-        <p>예제 자료 불러오기 → 기법 선택 → 변수·척도 → 분석 → 그래프·결과</p>
+        <h4 data-i18n="tut.b1a">절차 A · 예제를 통한 분석</h4>
+        <p data-i18n="tut.b1ap">예제 자료 불러오기 → 기법 선택 → 변수·척도 → 분석 → 그래프·결과</p>
       </div>
       <div>
-        <h4>절차 B · 학습으로 통계 익히기</h4>
-        <p>명칭 → 초·중·고급 → 예제 확인 → 작업대 적용</p>
+        <h4 data-i18n="tut.b1b">절차 B · 학습으로 통계 익히기</h4>
+        <p data-i18n="tut.b1bp">명칭 → 초·중·고급 → 예제 확인 → 작업대 적용</p>
       </div>
     </div>
     <div class="tutorial-meta">
-      <p class="tutorial-actions">
-        <a class="btn btn-solid" href="guides/methodos-basic-procedure/index.html">절차 가이드 열기</a>
-      </p>
+      <div class="tutorial-actions">
+        <a class="btn btn-solid" href="guides/methodos-basic-procedure/index.html" data-i18n="tut.openGuide">절차 가이드 열기</a>
+        {video_guide("https://youtu.be/tV5cnbs04l0", "https://youtu.be/hjxgEtSTjZE", "https://youtu.be/6wMh3WetF4w")}
+      </div>
     </div>
   </article>
   <article class="info-card tutorial-detail">
-    <h3>02 · methodosQ 실행방법</h3>
-    <p>Q방법론 8단계·학습 트랙을 번호 절차로 따라갑니다.</p>
+    <h3 data-i18n="tut.q1">02 · methodosQ 실행방법</h3>
+    <p data-i18n="tut.q1p">Q방법론 8단계·학습 트랙을 번호 절차로 따라갑니다.</p>
     <div class="tutorial-cols">
       <div>
-        <h4>절차 A · 예제로 Q분석</h4>
-        <p>예제 → 포맷 → 내 자료 → 연구 8단계 → 해석·보고</p>
+        <h4 data-i18n="tut.q1a">절차 A · 예제로 Q분석</h4>
+        <p data-i18n="tut.q1ap">예제 → 포맷 → 내 자료 → 연구 8단계 → 해석·보고</p>
       </div>
       <div>
-        <h4>절차 B · 학습 트랙</h4>
-        <p>입문 → 연구중 → 논문대비 → 개념사전 → 예제 확인</p>
+        <h4 data-i18n="tut.q1b">절차 B · 학습 트랙</h4>
+        <p data-i18n="tut.q1bp">입문 → 연구중 → 논문대비 → 개념사전 → 예제 확인</p>
       </div>
     </div>
     <div class="tutorial-meta">
-      <p class="tutorial-actions">
-        <a class="btn btn-solid" href="guides/methodosQ-procedure/index.html">절차 가이드 열기</a>
-      </p>
+      <div class="tutorial-actions">
+        <a class="btn btn-solid" href="guides/methodosQ-procedure/index.html" data-i18n="tut.openGuide">절차 가이드 열기</a>
+        {video_guide("https://youtu.be/f0T824pN8BY", "https://youtu.be/ajOUS-qB8Go", "https://youtu.be/o2wNfGSPZsI")}
+      </div>
     </div>
   </article>
   <article class="info-card tutorial-detail">
-    <h3>03 · methodosG 실행방법</h3>
-    <p>근거이론 코딩·이론화 절차를 Desktop 워크벤치에서 따라갑니다.</p>
+    <h3 data-i18n="tut.g1">03 · methodosG 실행방법</h3>
+    <p data-i18n="tut.g1p">예제 자료(다문화 가족 사례)로 근거이론 코딩·이론화 절차를 따라갑니다.</p>
     <div class="tutorial-cols">
       <div>
-        <h4>절차 A · 자료 → 코딩</h4>
-        <p>불러오기 → 개방 → 축 → 선택 코딩</p>
+        <h4 data-i18n="tut.g1a">절차 A · 예제 → 코딩</h4>
+        <p data-i18n="tut.g1ap">예제 자료 → 문제 설정 → 근거자료 → 의미추출 → 범주연결 → 이론응축</p>
       </div>
       <div>
-        <h4>절차 B · 이론화 → 보고</h4>
-        <p>메모 → 범주 → 이론 스케치 → 보고서</p>
+        <h4 data-i18n="tut.g1b">절차 B · 이론화 → 보고</h4>
+        <p data-i18n="tut.g1bp">결과 그래프 → 이론 결과 → 절차형 실습 → 홈 진행 → 논문형 결과</p>
       </div>
     </div>
     <div class="tutorial-meta">
-      <p class="tutorial-actions">
-        <a class="btn btn-solid" href="guides/methodosG-procedure/index.html">절차 가이드 열기</a>
-      </p>
+      <div class="tutorial-actions">
+        <a class="btn btn-solid" href="guides/methodosG-procedure/index.html" data-i18n="tut.openGuide">절차 가이드 열기</a>
+        {video_guide("https://youtu.be/6UICh51nlRU", "https://youtu.be/6jWPaLiLK_c", "https://youtu.be/wM_tQsWB6QU")}
+      </div>
     </div>
   </article>
   <article class="info-card tutorial-detail">
-    <h3>04 · methodos / StudiumR 실행방법</h3>
-    <p>Cloud SaaS에서 방법 추천·워크벤치와 AI Research 트랙을 절차로 익힙니다.</p>
+    <h3 data-i18n="tut.s1">04 · methodos / StudiumR 실행방법</h3>
+    <p data-i18n="tut.s1p">Cloud SaaS에서 방법 추천·워크벤치와 AI Research 트랙을 절차로 익힙니다.</p>
     <div class="tutorial-cols">
       <div>
-        <h4>절차 A · methodos</h4>
-        <p>방법 추천 → 프로세스 → 워크벤치 → 검토·검증</p>
+        <h4 data-i18n="tut.s1a">절차 A · methodos</h4>
+        <p data-i18n="tut.s1ap">방법 추천 → 프로세스 → 워크벤치 → 검토·검증</p>
       </div>
       <div>
-        <h4>절차 B · StudiumR</h4>
-        <p>대시보드 → 트랙 → 문헌·설계 → 작성 → 크리틱</p>
+        <h4 data-i18n="tut.s1b">절차 B · StudiumR</h4>
+        <p data-i18n="tut.s1bp">대시보드 → 트랙 → 문헌·설계 → 작성 → 크리틱</p>
       </div>
     </div>
     <div class="tutorial-meta">
-      <p class="tutorial-actions">
-        <a class="btn btn-solid" href="guides/methodos-studiumr-procedure/index.html">절차 가이드 열기</a>
+      <div class="tutorial-actions">
+        <a class="btn btn-solid" href="guides/methodos-studiumr-procedure/index.html" data-i18n="tut.openGuide">절차 가이드 열기</a>
         <a class="btn btn-outline" href="https://methodos-eight.vercel.app/app" target="_blank" rel="noopener">methodos</a>
         <a class="btn btn-outline" href="https://ai-research-os-web.vercel.app/dashboard" target="_blank" rel="noopener">StudiumR</a>
-      </p>
+      </div>
     </div>
   </article>
 </div>
@@ -797,8 +823,8 @@ PAGES["pages/about/lab.html"] = (
 </div>
 <aside class="side-panel">
   <h3>더보기</h3>
-  <a href="mission.html"><img src="../../assets/icons/target.svg" alt="" /> 미션</a>
-  <a href="contact.html"><img src="../../assets/icons/mail.svg" alt="" /> 문의</a>
+  <a href="mission.html"><img src="../../assets/icons/target.svg" alt="" /> <span data-i18n="nav.mission">미션</span></a>
+  <a href="contact.html"><img src="../../assets/icons/mail.svg" alt="" /> <span data-i18n="nav.contact">문의</span></a>
 </aside>
 </div></section>
 """,
@@ -809,15 +835,15 @@ PAGES["pages/about/mission.html"] = (
     "../../",
     f"""
 <section class="page-hero"><div class="container">
-{crumbs([("홈", "../../index.html"), ("소개", "lab.html"), ("미션", None)])}
-<h1>미션 · 비전</h1>
-<p>Methodos Lab의 목표는 연구자가 방법 선택에서 분석과 논문 작성에 이르기까지 연구 과정 전반을 끊김 없이 이어갈 수 있도록 지원하는 것입니다.</p>
+{crumbs([("홈", "../../index.html", "crumb.home"), ("소개", "lab.html", "nav.about"), ("미션", None, "nav.mission")])}
+<h1 data-i18n="mission.h1">미션</h1>
+<p data-i18n="mission.p">Methodos Lab의 목표는 연구자가 방법 선택에서 분석과 논문 작성에 이르기까지 연구 과정 전반을 끊김 없이 이어갈 수 있도록 지원하는 것입니다.</p>
 </div></section>
 <section class="content-block"><div class="container prose">
 <ul>
   <li>연구방법의 절차를 소프트웨어로 표준화한다</li>
   <li>전문 분석(Desktop)과 AI Research(SaaS)를 연결한다</li>
-  <li>연구 데이터 활용의 자율성을 사용자에게 보장합니다</li>
+  <li data-i18n="mission.li1">연구 데이터 활용의 자율성을 사용자에게 보장합니다</li>
   <li>교육·워크숍으로 연구 역량 확산을 돕는다</li>
 </ul>
 </div></section>
@@ -844,29 +870,32 @@ PAGES["pages/about/contact.html"] = (
 
 # Pricing
 def main():
-    (ROOT / "index.html").write_text(page("홈", "", index_body, "Methodos Lab — 근거 기반 AI와 절차적 연구 솔루션"), encoding="utf-8")
+    (ROOT / "index.html").write_text(
+        page("홈", "", index_body, "Methodos Lab — 근거 기반 AI와 절차적 연구 솔루션", title_key="crumb.home"),
+        encoding="utf-8",
+    )
     for rel, (title, depth, body) in PAGES.items():
         path = ROOT / rel
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(page(title, depth, body), encoding="utf-8")
     # README
     (ROOT / "README.md").write_text(
-        """# Methodos Lab Homepage (HTML Prototype)
+        """# Methodos Lab Homepage
 
-Methodos Lab 공식 홈페이지 HTML 시안입니다. 최종 구현은 React로 이식하기 위한 디자인·정보구조 프로토타입입니다.
+Methodos Lab official homepage (static HTML). Supports Korean / English / 中文 via the KO·EN·ZH switcher.
 
 ## Live SaaS
 - methodos: https://methodos-eight.vercel.app/
 - StudiumR: https://ai-research-os-web.vercel.app/
 
 ## Open locally
-`index.html` 을 브라우저에서 엽니다.
+Serve the folder root (e.g. `python -m http.server 8765`) and open `index.html`.
 
-## Stack note
-- Fonts: NanumSquareNeo (로컬 복사)
-- Icons: Lucide (free icon) + custom Lab logo
-- Design reference: StudiumR landing structure
-- Menu reference: JASP, jamovi, Orange
+## Regenerate
+```
+python _generate_site.py
+python _rebuild_guides.py
+```
 """,
         encoding="utf-8",
     )
