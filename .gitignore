@@ -9,10 +9,21 @@ dist-ssr/
 
 # local preview / capture artifacts
 _preview-*.png
+_demo-*.png
+_check-*.png
 _verify_*.py
 _capture_*.mjs
+_i18n_runtime_audit.json
 __pycache__/
 *.pyc
+
+# packaging / local media not needed on GitHub
+*.zip
+유튜브영상소스/
+
+# one-off local tooling (not required to run the site)
+_prepend_logo_intro.py
+_record_guide_videos.py
 
 # OS / editor
 .DS_Store

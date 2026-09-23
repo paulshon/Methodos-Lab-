@@ -1241,6 +1241,68 @@ a.info-card:hover {
   .tutorial-cols {
     grid-template-columns: 1fr;
   }
+
+  .tutorial-detail {
+    padding: 1.1rem 1rem;
+  }
+
+  .tutorial-detail > p {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .tutorial-cols > div {
+    padding: 0.8rem 0.85rem;
+  }
+
+  .tutorial-cols h4 {
+    font-size: 0.88rem;
+  }
+
+  .tutorial-cols p {
+    font-size: 0.84rem;
+    line-height: 1.55;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+
+  .tutorial-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.65rem;
+    margin-top: 0.95rem !important;
+  }
+
+  .tutorial-actions .btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .video-guide {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.55rem 0.65rem 0.55rem 0.85rem;
+    border-radius: 14px;
+  }
+
+  .video-guide__label {
+    font-size: 0.8rem;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .video-guide__langs {
+    flex: 0 0 auto;
+  }
+
+  .video-lang {
+    min-width: 2.25rem;
+    height: 2rem;
+  }
 }
 
 
