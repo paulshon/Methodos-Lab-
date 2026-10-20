@@ -7,7 +7,7 @@
 // 개발 중에는 주소창에 ?clerkPk=pk_test_…&authBase=http://localhost:3100 을 한 번 붙이면 이 브라우저에 기억된다(빈 값으로 지운다).
 (() => {
   const CONFIG = {
-    clerkPublishableKey: "",
+    clerkPublishableKey: "pk_test_Ym9sZC1lbGstMjYwNi5jbGVyay5hY2NvdW50cy5kZXYk",
     authBase: "https://methodos-lab-q11s.vercel.app",
   };
 
