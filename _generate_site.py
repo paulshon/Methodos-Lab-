@@ -588,7 +588,7 @@ PAGES["pages/download/desktop.html"] = (
 </div></section>
 <section class="content-block"><div class="container">
 <div class="card-list">
-  <div class="info-card"><h3>methodos-basic</h3><p>MethodosBasic-LT-Setup.exe (설치형) · MethodosBasic-LT.exe (포터블)</p></div>
+  <div class="info-card"><h3>methodos-basic</h3><p style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.6rem"><a class="btn btn-solid" href="https://github.com/paulshon/Methodos-Lab-/releases/download/v22.20.1-authv1/MethodosBasic-LT-4-all-v4-R20-Learn-AuthV1-Setup.exe" rel="noopener"><img src="../../assets/icons/download.svg" alt="" /> <span data-i18n="dl.basic.setup">설치형 다운로드 (Setup.exe)</span></a><a class="btn btn-outline" href="https://github.com/paulshon/Methodos-Lab-/releases/download/v22.20.1-authv1/MethodosBasic-LT-4-all-v4-R20-Learn-AuthV1.exe" rel="noopener"><img src="../../assets/icons/download.svg" alt="" /> <span data-i18n="dl.basic.portable">포터블 다운로드 (.exe)</span></a></p><p style="margin-top:.6rem;font-size:.85rem;color:#5d7380" data-i18n="dl.basic.note">첫 실행 시 인증키 창이 뜹니다. 회원가입 후 발급받은 인증키를 입력하세요. (v22.20.1 · Windows)</p></div>
   <div class="info-card"><h3>methodosQ</h3><p>methodosQ-v6-Setup.exe · methodosQ-v6-portable.exe</p></div>
   <div class="info-card"><h3>methodosG</h3><p>MethodosG-v6-Setup.exe · MethodosG-v6-portable.exe</p></div>
 </div>

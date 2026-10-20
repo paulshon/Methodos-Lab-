@@ -1585,3 +1585,22 @@ table.compare {
     padding: 1.6rem;
   }
 }
+
+/* 회원 로그인·회원가입 버튼 (js/main.js 가 넣는다) */
+.auth-links { display: inline-flex; align-items: center; gap: 0.45rem; }
+.auth-link {
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-weight: 800;
+  font-size: 0.84rem;
+  white-space: nowrap;
+}
+.auth-link:hover { border-color: var(--teal); color: var(--teal); }
+.auth-link--solid { background: var(--teal); border-color: var(--teal); color: #fff; }
+.auth-link--solid:hover { background: var(--teal-deep); border-color: var(--teal-deep); color: #fff; }
+.auth-link--admin { background: var(--ink); border-color: var(--ink); color: #fff; }
+.auth-links--mobile { display: flex; justify-content: center; margin-bottom: 0.75rem; }
+.auth-links--mobile .auth-link { flex: 1; text-align: center; padding: 0.7rem 0.9rem; }
+@media (max-width: 960px) { .nav-inner > .auth-links:not(.auth-links--mobile) { display: none; } }

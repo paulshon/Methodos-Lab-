@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face { font-family: "NanumSquareNeo"; src: url("/fonts/NanumSquareNeo-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "NanumSquareNeo"; src: url("/fonts/NanumSquareNeo-Bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "NanumSquareNeo"; src: url("/fonts/NanumSquareNeo-ExtraBold.ttf") format("truetype"); font-weight: 800; font-display: swap; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  @apply bg-white text-ink antialiased;
+  font-family: "NanumSquareNeo", "Malgun Gothic", sans-serif;
+}
