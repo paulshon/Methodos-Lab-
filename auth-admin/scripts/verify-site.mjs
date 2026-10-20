@@ -59,6 +59,7 @@ const child = spawn("npx", ["next", "dev", "--port", String(PORT), "--hostname",
     LICENSE_ADMIN_TOKEN: TOKEN,
     LICENSE_PRIVATE_KEY: privPem.replace(/\n/g, "\\n"),
     MEMBERS_DEV_FILE: path.join(tmp, "members.json"),
+    NEXT_PUBLIC_HOMEPAGE_URL: "https://home.example",
     GITHUB_RELEASE_REPO: "",
     GITHUB_RELEASE_TAG: "",
   },
@@ -77,10 +78,13 @@ try {
   }
 
   console.log("\n페이지·배포처");
-  for (const p of ["/", "/login", "/signup", "/account", "/offline", "/admin-preview"]) {
+  for (const p of ["/login", "/admin", "/offline", "/admin-preview"]) {
     const r = await fetch(base + p, { redirect: "manual" });
     check(`GET ${p}`, r.status === 200, String(r.status));
   }
+  const root = await fetch(base + "/", { redirect: "manual" });
+  check("GET / → /admin 으로 이동(관리자 전용 서버)", [307, 308].includes(root.status) && (root.headers.get("location") || "").endsWith("/admin"));
+  check("/signup·/account 는 이 서버에 없다(회원은 홈페이지에서)", (await fetch(base + "/signup")).status === 404 && (await fetch(base + "/account")).status === 404);
   for (const id of ["win-portable", "win-setup"]) {
     const r = await fetch(`${base}/api/download/${id}`, { redirect: "manual" });
     const loc = r.headers.get("location") || "";
@@ -92,6 +96,22 @@ try {
   }
   const me = await (await fetch(base + "/api/me")).json();
   check("/api/me (Clerk 없음)", me.configured === false && me.signedIn === false);
+
+  console.log("\n홈페이지(다른 도메인)에서의 내 키 조회 — CORS");
+  const pre = await fetch(base + "/api/my-keys", {
+    method: "OPTIONS",
+    headers: { origin: "https://home.example", "access-control-request-method": "GET", "access-control-request-headers": "authorization" },
+  });
+  check(
+    "허용 출처 사전요청 → 204 + allow-origin + authorization 허용",
+    pre.status === 204 &&
+      pre.headers.get("access-control-allow-origin") === "https://home.example" &&
+      /authorization/i.test(pre.headers.get("access-control-allow-headers") || ""),
+  );
+  const evil = await fetch(base + "/api/my-keys", { method: "OPTIONS", headers: { origin: "https://evil.example" } });
+  check("허용되지 않은 출처에는 allow-origin 없음", !evil.headers.get("access-control-allow-origin"));
+  const g = await fetch(base + "/api/my-keys", { headers: { origin: "https://home.example" } });
+  check("응답에도 allow-origin (Clerk 없음 → 503)", g.status === 503 && g.headers.get("access-control-allow-origin") === "https://home.example");
 
   console.log("\n관리자 보호");
   check("토큰 없이 /admin/members → 401", (await fetch(base + "/admin/members")).status === 401);

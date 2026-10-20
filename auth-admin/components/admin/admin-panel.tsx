@@ -123,7 +123,7 @@ export function AdminPanel({ mode, who }: { mode: "session" | "token"; who?: str
       setCreated(row);
       setIssuing(null);
       setIssue({ months: 1, maxDevices: 1, note: "" });
-      setNotice(`${m.email} 님에게 ${termLabel(row.termMonths)} 인증키를 발급했습니다. 회원이 「내 계정」에서 바로 볼 수 있습니다.`);
+      setNotice(`${m.email} 님에게 ${termLabel(row.termMonths)} 인증키를 발급했습니다. 회원이 메스도스랩 홈페이지의 「내 계정」에서 바로 볼 수 있습니다.`);
       await load();
     } catch (e) {
       setError((e as Error).message);
@@ -243,7 +243,7 @@ export function AdminPanel({ mode, who }: { mode: "session" | "token"; who?: str
             </div>
             <input className={`${inputCls} max-w-xs`} value={mQuery} onChange={(e) => setMQuery(e.target.value)} placeholder="이메일·이름 검색" aria-label="회원 검색" />
           </div>
-          <p className="mt-2 text-xs text-ink-3">회원가입(Clerk)한 사람이 여기에 나타납니다. 가입을 확인하고 기간을 골라 인증키를 발급하면, 그 회원의 「내 계정」에 키가 보입니다.</p>
+          <p className="mt-2 text-xs text-ink-3">메스도스랩 홈페이지에서 회원가입(Clerk)한 사람이 여기에 나타납니다. 가입을 확인하고 기간을 골라 인증키를 발급하면, 그 회원이 홈페이지 「내 계정」에서 키를 볼 수 있습니다.</p>
 
           <div className="mt-3 overflow-x-auto rounded-2xl border border-line bg-white">
             <table className="w-full min-w-[760px] text-left text-sm">

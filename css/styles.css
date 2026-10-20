@@ -1604,3 +1604,18 @@ table.compare {
 .auth-links--mobile { display: flex; justify-content: center; margin-bottom: 0.75rem; }
 .auth-links--mobile .auth-link { flex: 1; text-align: center; padding: 0.7rem 0.9rem; }
 @media (max-width: 960px) { .nav-inner > .auth-links:not(.auth-links--mobile) { display: none; } }
+
+/* 회원 페이지 (pages/member) */
+.member-wrap { max-width: 720px; }
+.member-clerk { display: flex; justify-content: center; }
+.member-email { color: var(--ink-soft); font-weight: 800; }
+.member-wrap h2 { margin: 1.6rem 0 0.6rem; font-size: 1.15rem; }
+.member-key { border: 1px solid var(--line); border-radius: 14px; padding: 0.9rem 1rem; background: #fff; margin-bottom: 0.7rem; }
+.member-key code { font-size: 1.05rem; letter-spacing: 0.06em; background: var(--paper); padding: 0.35rem 0.6rem; border-radius: 8px; user-select: all; }
+.member-key .btn { padding: 0.35rem 0.9rem; font-size: 0.8rem; }
+.member-badge { margin-left: 0.5rem; padding: 0.15rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 800; }
+.member-badge.ok { background: #e6f2f0; color: var(--teal); }
+.member-badge.bad { background: #fdecec; color: #b42318; }
+.member-meta, .member-note, .member-empty { color: #5d7380; font-size: 0.88rem; margin-top: 0.5rem; }
+.member-empty { background: var(--paper); border-radius: 12px; padding: 0.9rem 1rem; }
+.member-dl { display: flex; gap: 0.6rem; flex-wrap: wrap; }

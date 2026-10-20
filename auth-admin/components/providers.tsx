@@ -21,9 +21,7 @@ export function AppProviders({ children }: { children: React.ReactNode }) {
     <ClerkProvider
       {...(clerkKeyless() ? {} : { publishableKey: pk })}
       signInUrl="/login"
-      signUpUrl="/signup"
-      signInFallbackRedirectUrl="/"
-      signUpFallbackRedirectUrl="/"
+      signInFallbackRedirectUrl="/admin"
       appearance={CLERK_GREEN}
     >
       {children}

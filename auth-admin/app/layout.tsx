@@ -5,8 +5,8 @@ import { SiteNav } from "@/components/site-nav";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Methodos Lab — 회원 · 인증키",
-  description: "Methodos Lab 회원가입·로그인과 Methodos Basic 인증키 관리.",
+  title: "Methodos Lab — 관리자",
+  description: "Methodos Lab 회원 확인과 Methodos Basic 인증키 발급 관리자.",
 };
 
 export const viewport: Viewport = {

@@ -6,10 +6,9 @@ import { clerkConfigured } from "@/lib/clerk";
 const isPublic = createRouteMatcher([
   "/",
   "/login(.*)",
-  "/signup(.*)",
   "/api/download(.*)",
   "/api/me", // 비로그인이면 signedIn:false 로 답한다
-  // /api/my-keys 는 라우트가 직접 로그인 여부를 확인해 401 JSON 으로 답한다(리다이렉트 대신).
+  // /api/my-keys 는 홈페이지의 회원이 토큰(Bearer)으로 부른다. 라우트가 직접 로그인 여부를 확인해 401 JSON 으로 답한다.
   "/api/my-keys",
   // 인증키 서버 — 앱(데스크톱)이 부른다. 보호는 서명·관리자 토큰으로 하므로 Clerk 로그인은 요구하지 않는다.
   "/api/activate",
